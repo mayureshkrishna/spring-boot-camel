@@ -35,6 +35,7 @@
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <spring-boot-version>1.4.2.RELEASE</spring-boot-version>
+    <docker.image.prefix>springio</docker.image.prefix>
     
     <!-- Camel -->
     <version.camel>2.19.0-SNAPSHOT</version.camel>
@@ -112,6 +113,22 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+            <groupId>com.spotify</groupId>
+            <artifactId>docker-maven-plugin</artifactId>
+            <version>0.4.13</version>
+            <configuration>
+                <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+                <dockerDirectory>src/main/docker</dockerDirectory>
+                <resources>
+                    <resource>
+                        <targetPath>/</targetPath>
+                        <directory>${project.build.directory}</directory>
+                        <include>${project.build.finalName}.jar</include>
+                    </resource>
+                </resources>
+            </configuration>
+        </plugin>
     </plugins>
   </build>
   
