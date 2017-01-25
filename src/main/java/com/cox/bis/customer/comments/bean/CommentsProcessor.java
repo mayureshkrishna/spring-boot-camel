@@ -4,8 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.camel.Exchange;
+import org.apache.camel.spring.SpringCamelContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
+
+
+
 
 
 import com.cox.bis.customer.comments.model.CustomerComment;
@@ -25,9 +31,14 @@ public class CommentsProcessor {
 	 */
 	@Bean
 	public List<CustomerComment> search(Exchange ex) throws Exception {
-
+		
+		CommentsDataSource cds = new CommentsDataSource();
 		
 		List<CustomerComment> customerCommentsList = new ArrayList<>();
+		
+		customerCommentsList = cds.findAll();
+		
+		/*
 		CustomerComment customerComment = new CustomerComment();
 		customerComment.setCommentId("1");
 		customerComment.setEntryDate("1170101");
@@ -36,7 +47,7 @@ public class CommentsProcessor {
 		customerComment.setUserId("MKRISHNA");
 		customerComment.setExpirationDate("1170101");
 		customerCommentsList.add(customerComment);
-		
+		*/
 		return customerCommentsList;
 	}
 	

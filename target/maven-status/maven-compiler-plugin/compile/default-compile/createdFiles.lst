@@ -1,5 +1,0 @@
-com\cox\bis\customer\comments\bean\CommentsProcessor.class
-com\cox\bis\customer\comments\model\CustomerComment.class
-com\cox\bis\customer\comments\route\CustomerCommentsRB.class
-com\cox\bis\customer\comments\model\Message.class
-com\cox\bis\customer\comments\route\CustomerCommentsRB$CustomerCommentsRoute.class

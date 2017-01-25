@@ -24,7 +24,7 @@ import com.cox.bis.customer.comments.bean.CommentsProcessor;
 public class CustomerCommentsRB extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
-        SpringApplication.run(CustomerCommentsRB.class, args);
+    	SpringApplication.run(CustomerCommentsRB.class, args);
     }
 
     @Bean
