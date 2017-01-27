@@ -3,22 +3,18 @@ package com.cox.bis.customer.comments.bean;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.camel.Exchange;
-import org.apache.camel.spring.SpringCamelContext;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ConfigurableApplicationContext;
+import javax.annotation.Resource;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
-
-
-
-
 
 import com.cox.bis.customer.comments.model.CustomerComment;
 
 @Component
 public class CommentsProcessor {
 
+	@Resource
+	private CommentsDataSource commentsDataSource;
 	
 	/***
 	 * Method: searchComments
@@ -30,13 +26,14 @@ public class CommentsProcessor {
 	 * @throws Exception
 	 */
 	@Bean
-	public List<CustomerComment> search(Exchange ex) throws Exception {
+	public List<CustomerComment> search() throws Exception {
 		
-		CommentsDataSource cds = new CommentsDataSource();
+		//CommentsDataSource cds = new CommentsDataSource();
+		
 		
 		List<CustomerComment> customerCommentsList = new ArrayList<>();
 		
-		customerCommentsList = cds.findAll();
+		customerCommentsList = commentsDataSource.findAll();
 		
 		/*
 		CustomerComment customerComment = new CustomerComment();

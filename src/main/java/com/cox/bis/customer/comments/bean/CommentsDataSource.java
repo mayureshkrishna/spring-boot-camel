@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.cox.bis.customer.comments.model.CustomerComment;
 
@@ -21,8 +22,15 @@ public class CommentsDataSource {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Transactional(readOnly=true)
 	public List<CustomerComment> findAll() {
 		System.out.println("Query employees: platform->" + platform);
+		try {
+			System.out.println(jdbcTemplate.getDataSource().getConnection());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return jdbcTemplate.query("SELECT cc.SEQ_NBR, cc.ACCOUNT_NUMBER, cc.COMMENT_LINE,cc.USER_ID,cc.COMMENT_EXPIRATION_DATE,cc.COMMENT_ENTER_DATE,(CRM.FN_FORMATDATE_V2(cc.COMMENT_ENTER_DATE,NULL) || LPAD(cc.SEQ_NBR,3,'0')) FROM ICOMS.PHX_CUSTOMER_COMMENTS cc where cc.ACCOUNT_NUMBER = 1604 AND cc.SITE_ID = 436", new CommentsRowMapper());		
 	}
 	
