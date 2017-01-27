@@ -191,5 +191,16 @@
 		        <enabled>true</enabled>
 		    </snapshots>
 		</repository>
+		<repository>
+		    <id>cox-bis</id>
+		    <name>Cox BIS Official Repository</name>
+		    <url>https://repo.corp.cox.com/artifactory/cox-bis-virtual/</url>
+		    <releases>
+		        <enabled>false</enabled>
+		    </releases>
+		    <snapshots>
+		        <enabled>true</enabled>
+		    </snapshots>
+		</repository>
 	</repositories>
 </project>
