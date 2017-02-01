@@ -84,9 +84,9 @@
     	<version>2.0.1</version>
 	</dependency> -->
 	<dependency>
- 		<groupId>com.oracle.jdbc</groupId>
- 		<artifactId>ojdbc7</artifactId>
- 		<version>12.1.0.2</version>
+ 		<groupId>com.oracle</groupId>
+ 		<artifactId>oracle-jdbc</artifactId>
+ 		<version>6.0.0</version>
 	</dependency>
     <!-- Camel -->
      <dependency>
@@ -167,36 +167,11 @@
   
   <repositories>
 		<repository>
-			<id>spring-releases</id>
-			<url>http://repo.spring.io/libs-release-remote/</url>
-		</repository>
-		<repository>
-			<id>apache-public</id>
-			<url>https://repository.apache.org/content/groups/public/</url>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-		</repository>
-		<repository>
-		    <id>apache.snapshots</id>
-		    <name>Apache Development Snapshot Repository</name>
-		    <url>https://repository.apache.org/content/repositories/snapshots/</url>
-		    <releases>
-		        <enabled>false</enabled>
-		    </releases>
-		    <snapshots>
-		        <enabled>true</enabled>
-		    </snapshots>
-		</repository>
-		<repository>
-		    <id>cox-bis</id>
+		    <id>cox-bis-spring</id>
 		    <name>Cox BIS Official Repository</name>
-		    <url>https://repo.corp.cox.com/artifactory/cox-bis-virtual/</url>
+		    <url>https://repo.corp.cox.com/artifactory/bis-spring/</url>
 		    <releases>
-		        <enabled>false</enabled>
+		        <enabled>true</enabled>
 		    </releases>
 		    <snapshots>
 		        <enabled>true</enabled>
