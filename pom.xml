@@ -48,6 +48,7 @@
 	<!-- Dependencies - Test LifeCycle -->
 </properties>
 
+<!-- 
 <dependencyManagement>
     <dependencies>
 		     <dependency>
@@ -59,7 +60,7 @@
 		      </dependency>
     </dependencies>
   </dependencyManagement>
-  
+   -->
  <dependencies>
     <!-- spring-boot -->
     <dependency>
@@ -114,6 +115,7 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
+      <version>${spring-boot-version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -125,9 +127,9 @@
         <artifactId>spring-boot-maven-plugin</artifactId>
         <version>${spring-boot-version}</version>
         <configuration>
-<!-- 			<jvmArguments>
+ <!-- 			<jvmArguments>
 				-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005
-			</jvmArguments> -->
+			</jvmArguments>  -->
 	        <resources>
     		       <resource>
             	   	<directory>resources</directory>
@@ -146,6 +148,7 @@
           </execution>
         </executions>
       </plugin>
+     <!-- 
       <plugin>
             <groupId>com.spotify</groupId>
             <artifactId>docker-maven-plugin</artifactId>
@@ -162,7 +165,8 @@
                 </resources>
             </configuration>
         </plugin>
- 	 </plugins>
+         -->
+ 	 </plugins> 
   </build>
   
   <repositories>

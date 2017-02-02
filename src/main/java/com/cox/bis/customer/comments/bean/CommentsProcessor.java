@@ -28,23 +28,8 @@ public class CommentsProcessor {
 	@Bean
 	public List<CustomerComment> search() throws Exception {
 		
-		//CommentsDataSource cds = new CommentsDataSource();
-		
-		
 		List<CustomerComment> customerCommentsList = new ArrayList<>();
-		
 		customerCommentsList = commentsDataSource.findAll();
-		
-		/*
-		CustomerComment customerComment = new CustomerComment();
-		customerComment.setCommentId("1");
-		customerComment.setEntryDate("1170101");
-		customerComment.setSequenceNumber("1");
-		customerComment.setCommentLineText("This is a mock test comment");
-		customerComment.setUserId("MKRISHNA");
-		customerComment.setExpirationDate("1170101");
-		customerCommentsList.add(customerComment);
-		*/
 		return customerCommentsList;
 	}
 	
