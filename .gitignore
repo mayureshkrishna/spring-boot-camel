@@ -17,3 +17,5 @@ path
 *.classpath
 .settings
 /.settings/
+application-dev.properties
+application-qa.properties

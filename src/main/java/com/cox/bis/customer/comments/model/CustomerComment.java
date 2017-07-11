@@ -1,11 +1,9 @@
 package com.cox.bis.customer.comments.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import com.cox.bis.customer.comments.model.Message;
-
 public class CustomerComment {
+	
 	
 	private String siteId;
 	private String accountNumber;
@@ -17,6 +15,7 @@ public class CustomerComment {
 	private String commentLineText;
 	private String userId;
 	private String expirationDate;
+
 	
 	public CustomerComment() {
 		//Do nothing...
@@ -145,23 +144,20 @@ public class CustomerComment {
 		this.expirationDate = expirationDate;
 	}
 
-	public List<Message> getMessages() {
-		if(messages == null){
-			messages = new ArrayList<Message>();
-		}
-		return messages;
-	}
-
-	public void setMessages(List<Message> messages) {
-		this.messages = messages;
-	}
-
 	public String getSuccess() {
 		return success;
 	}
 
 	public void setSuccess(String success) {
 		this.success = success;
+	}
+
+	public List<Message> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(List<Message> messages) {
+		this.messages = messages;
 	}
 
 }
