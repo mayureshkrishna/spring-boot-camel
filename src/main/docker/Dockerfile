@@ -1,6 +1,9 @@
-FROM lwieske/java-8:server-jre-8u121-slim
-MAINTAINER Mayuresh Krishna:0.1
+FROM repo.corp.cox.com:5001/alpine-java8:latest
+LABEL maintainer Mayuresh Krishna <mayureshkrishna@gmail.com>
+EXPOSE 8080
 VOLUME /tmp
-ADD customer-comments-0.0.1-snapshot.jar app.jar
+COPY newrelic.yml newrelic.yml
+RUN	 wget -q "http://download.newrelic.com/newrelic/java-agent/newrelic-agent/current/newrelic.jar" -O /newrelic.jar
+ADD customer-comments*.jar app.jar
 RUN sh -c 'touch /app.jar'
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ENTRYPOINT exec java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -javaagent:newrelic.jar -jar /app.jar
