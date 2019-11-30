@@ -31,7 +31,7 @@
 		<spring-boot-version>1.4.2.RELEASE</spring-boot-version>
 		<docker.image.prefix>mayureshkrishna</docker.image.prefix>
 		<!-- Camel -->
-		<version.camel>2.18.2</version.camel>
+		<version.camel>3.0.0</version.camel>
 		<!-- Dependencies - Test LifeCycle -->
 		<version.junit>4.11</version.junit>
 		<!-- Dependencies - Test LifeCycle -->
