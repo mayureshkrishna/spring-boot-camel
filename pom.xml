@@ -28,10 +28,10 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
-		<spring-boot-version>1.4.2.RELEASE</spring-boot-version>
+		<spring-boot-version>2.3.0.RELEASE</spring-boot-version>
 		<docker.image.prefix>mayureshkrishna</docker.image.prefix>
 		<!-- Camel -->
-		<version.camel>2.18.2</version.camel>
+		<version.camel>3.3.0</version.camel>
 		<!-- Dependencies - Test LifeCycle -->
 		<version.junit>4.11</version.junit>
 		<!-- Dependencies - Test LifeCycle -->
